@@ -1,0 +1,196 @@
+.home-main {
+    position: relative;
+    height: 100%;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 3;
+}
+
+.home-main .home-sections {
+    position: absolute;
+    padding: 1.1em 2em;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.home-main .home-sections hr {
+    margin-bottom: 0;
+}
+
+.mailbox-title {
+    display: inline-block;
+    color: #11101d;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.form-group {
+    display: flex;
+}
+
+.placeholder {
+    color: #A9A9A9;
+    margin-top: 0.4em;
+    width: 100px;
+}
+
+textarea {
+    margin: 0;
+    min-height: 300px;
+}
+
+/* .form-control{
+    margin-left: 0.5em;
+} */
+
+.compose-btns {
+    position: absolute;
+}
+
+.submit-btn {
+    margin-top: 2em;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius: 5px;
+    background: #fff;
+    border: 2px solid #6c5fff;
+    color: #6c5fff;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+    color: white;
+    background: #6c5fff;
+}
+
+.submit-btn:active {
+    letter-spacing: 2px;
+    outline: none;
+}
+
+.submit-btn:focus {
+    outline: none;
+}
+
+.discard-btn {
+    left: calc(4em + 130px);
+    margin-top: 2em;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius: 5px;
+    background: #fff;
+    border: 2px solid #ff5f5f;
+    color: #ff5f5f;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.discard-btn:hover {
+    color: white;
+    background: #ff5f5f;
+}
+
+.discard-btn:active {
+    letter-spacing: 2px;
+    outline: none;
+}
+
+.discard-btn:focus {
+    outline: none;
+}
+
+.email-list {
+    margin: 0;
+    height: 3em;
+    width: 100%;
+    padding: 0.77em 0;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.email-toolbar {
+    margin: 0;
+    width: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    margin-bottom: 1.7em;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.email-toolbar .toolbar-icons {
+    color: grey;
+    font-size: 1.3em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+#back-button {
+    font-size: 1.6em;
+    margin-right: 0.6em;
+    transform: translate(0px, -2px);
+}
+
+.main-reply-btn {
+    float: right;
+    margin: 2em 0px 2em 1em;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius: 5px;
+    background: #fff;
+    border: 2px solid #6c5fff;
+    color: #6c5fff;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.main-reply-btn:hover {
+    color: white;
+    background: #6c5fff;
+}
+
+.main-reply-btn:active {
+    letter-spacing: 2px;
+    outline: none;
+}
+
+.main-reply-btn:focus {
+    outline: none;
+}
+
+.button-display {
+    display: none;
+}
+
+.replyNshareBtns {
+    position: absolute;
+    right: 2em;
+}
+
+.empty-page{
+    position: absolute; 
+    width: 94%; 
+    text-align: center; 
+    height: 400px; 
+    margin-top: 5%;
+}

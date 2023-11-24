@@ -1,0 +1,33 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'mail/css/logNreg-style.css' %}">
+
+<div id="tsparticles" height="100%" width="100%"></div>
+
+<form class="form" action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <img src="{% static 'mail/logo.png' %}">
+
+    <input type="email" name="email" placeholder="Email" />
+
+    <input type="password" name="password" placeholder="Password" />
+
+    {% if message %}
+    <div class="error-msg">{{ message }}</div>
+    {% else %}
+    <div class="error-msg">&nbsp;</div>
+    {% endif %}
+
+    <button type="submit">Login</button>
+
+    <p class="create-acc">Don't have an account?<a href="{% url 'register' %}">Create</a></p>
+
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.18.3/dist/tsparticles.min.js"></script>
+<script src="{% static 'mail/js/particles.js' %}"></script>
+
+{% endblock %}

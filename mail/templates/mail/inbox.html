@@ -1,0 +1,131 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'mail/css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'mail/css/styles.css' %}">
+
+<div class="sidebar open">
+    <div class="logo-details">
+        <i class='bx bxl-xing icon white-icon'></i>
+        <div class="logo_name">Next Mail</div>
+        <i class='bx bx-menu-alt-right white-icon' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+            <a href="#" class="nav-item compose-new" id="compose">
+                <i class='bx bxs-message-square-add'></i>
+                <span class="links_name">Compose</span>
+            </a>
+            <span class="tooltip">Compose</span>
+        </li>
+        <li>
+            <a href="#" class="nav-item" id="inbox">
+                <i class='bx bxl-gmail'></i>
+                <span class="links_name">Inbox</span>
+            </a>
+            <span class="tooltip">Inbox</span>
+        </li>
+        <li>
+            <a href="#" class="nav-item" id="sent">
+                <i class='bx bx-paper-plane'></i>
+                <span class="links_name">Sent</span>
+            </a>
+            <span class="tooltip">Sent</span>
+        </li>
+        <li>
+            <a href="#" class="nav-item" id="archive">
+                <i class='bx bx-archive-in'></i>
+                <span class="links_name">Archived</span>
+            </a>
+            <span class="tooltip">Archived</span>
+        </li>
+        <li>
+            <a href="#" class="nav-item" id="flags">
+                <i class='bx bx-bookmark'></i>
+                <span class="links_name">Flages</span>
+            </a>
+            <span class="tooltip">Flages</span>
+        </li>
+        <li>
+            <a href="#" class="nav-item" id="spam">
+                <i class='bx bx-shield-x' style="font-size: 24px;"></i>
+                <span class="links_name">Spam</span>
+            </a>
+            <span class="tooltip">Spam</span>
+        </li>
+        <li>
+            <a href="#" class="nav-item" id="trash">
+                <i class='bx bx-trash-alt'></i>
+                <span class="links_name">Trash</span>
+            </a>
+            <span class="tooltip">Trash</span>
+        </li>
+        <li class="profile">
+            <div class="profile-details">
+                <!--<img src="profile.jpg" alt="profileImg">-->
+                <div class="name">{{ request.user.email }}</div>
+            </div>
+            <i class='bx bx-log-out white-icon' id="log_out" onclick="location.href='{% url 'logout' %}';"></i>
+        </li>
+    </ul>
+</div>
+<section class="home-main">
+
+    <section id="emails-view" class="home-sections">
+    </section>
+
+    <section id="compose-view" class="home-sections">
+        <h4 class="title" style="margin-top: 0.2em;">Compose</h4>
+        <hr style="margin-bottom: 2em;">
+        <div>
+            <form id="compose-form">
+
+                <div class="form-group">
+                    <label class="placeholder" for="compose-recipients">To: </label>
+                    <input id="compose-recipients" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label class="placeholder" for="sender">From: </label>
+                    <input disabled class="form-control" value="{{ request.user.email }}" id="sender">
+                </div>
+
+                <div class="form-group">
+                    <label class="placeholder" for="compose-subject">Subject: </label>
+                    <input class="form-control" id="compose-subject">
+                </div>
+
+                <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+
+                <input type="submit" id="submit-button" class="submit-btn  compose-btns" value="SEND">
+                
+            </form>
+            <button id="discard-button" class="discard-btn compose-btns" onclick="load_mailbox('inbox')">DISCARD</button>
+        </div>
+    </section>
+    <section id="email-view" class="home-sections">
+    </section>
+</section>
+
+<script src="{% static 'mail/js/navbar.js' %}"></script>
+<script src="{% static 'mail/js/inbox.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- <script>
+    $(function () {
+        $(".nav-item").click(function (e) {
+            e.preventDefault();
+            $(".nav-item").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script> -->
+
+{% endblock %}
